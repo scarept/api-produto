@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-produto
+spec:
+  selector:
+    matchLabels:
+      app: api-produto
+  template:
+    metadata:
+      labels:
+        app: api-produto
+    spec:
+      containers:
+        - name: api-produto
+          image: scarept/api-produto:v1
+          ports:
+            - containerPort: 8080
